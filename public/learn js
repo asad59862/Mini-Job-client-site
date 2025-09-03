@@ -1,0 +1,9 @@
+ //step 1
+ {  const handleDetails = () => {
+    navigate(`/task/${task._id}`, { state: { task } }); // send task via state
+  };}
+//step 2  
+
+{const { task } = location.state || {};
+
+  if (!task) return <p className="p-4">No task data found!</p>;}

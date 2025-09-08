@@ -103,7 +103,7 @@ const TaskDetails = () => {
   };
 
   return (
-    <div className="p-4 max-w-lg mx-auto bg-white shadow-md rounded-lg border border-gray-200">
+    <div className="p-4 max-w-lg mx-auto bg-white shadow-md rounded-lg border border-gray-200 text-black ">
       {/* Toast Container */}
       <Toaster position="top-right" reverseOrder={false} />
 

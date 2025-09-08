@@ -18,7 +18,7 @@ const HomeSlider = () => {
   }, [slides.length]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-10">
+    <div className="w-full dark:bg-base-100 max-w-4xl mx-auto my-10">
       {/* Slider container */}
       <div className="relative w-full h-80 rounded-xl shadow-lg overflow-hidden">
         {slides.map((slide, index) => (

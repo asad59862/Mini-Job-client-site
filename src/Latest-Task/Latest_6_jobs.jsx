@@ -13,12 +13,12 @@ const Latest_6_jobs = () => {
   }, []); // run once
 
   return (
-    <div className="overflow-x-auto p-4">
+    <div className="overflow-x-auto  p-4">
       <h1 className="text-center font-extrabold text-4xl my-6"> Latest Task</h1>
       {tasks.length > 0 ? (
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead className="text-center">
-            <tr className="bg-gray-200">
+            <tr className="">
               <th className="px-4 py-2">No</th>
               <th className="px-4 py-2">Title</th>
               <th className="px-4 py-2">Deadline</th>

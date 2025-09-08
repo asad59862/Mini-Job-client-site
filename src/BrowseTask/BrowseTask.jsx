@@ -16,7 +16,7 @@ const BrowseTask = () => {
       {tasks.length > 0 ? (
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead className="text-center">
-            <tr className="bg-gray-200">
+            <tr className="light:bg-gray-200">
               <th className="px-4 py-2">No</th>
               <th className="px-4 py-2">Title</th>
               <th className="px-4 py-2">Deadline</th>

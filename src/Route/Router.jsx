@@ -9,6 +9,7 @@ import BrowseTask from "../BrowseTask/BrowseTask";
 import TaskDetails from "../BrowseTask/TaskDetails";
 import MypostedAllJob from "../My-posted-job/MypostedAllJob";
 import UpdateProfile from "../profile/UpdateProfile";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -21,7 +22,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addtask",
-        Component: AddTask,
+        element: (
+          <PrivateRoute>
+            <AddTask></AddTask>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -37,15 +42,23 @@ export const router = createBrowserRouter([
       },
       {
         path: "/task/:id",
-        Component: TaskDetails,
+        element: (
+          <PrivateRoute>
+            <TaskDetails></TaskDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myjob",
-        Component: MypostedAllJob,
+        element: (
+          <PrivateRoute>
+           <MypostedAllJob></MypostedAllJob>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-profile",
-        Component:UpdateProfile
+        Component: UpdateProfile,
       },
     ],
   },

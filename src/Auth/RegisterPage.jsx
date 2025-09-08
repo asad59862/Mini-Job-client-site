@@ -1,8 +1,6 @@
-
-
-import lotiRegister from "../assets/loti/Register.json"; // add your Lottie JSON
+import lotiRegister from "../assets/loti/Register.json";
 import { useAuth } from "../Hook/authHook";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, useLocation } from "react-router";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { uploadImage } from "../ImageUpload/imageUpload";
@@ -10,6 +8,7 @@ import Lottie from "react-lottie";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
+  const location = useLocation(); // ✅ capture previous route
   const { register, loginWithGoogle } = useAuth();
 
   const [formData, setFormData] = useState({
@@ -18,6 +17,8 @@ const RegisterPage = () => {
     password: "",
     profilePhoto: null,
   });
+
+  const from = location.state?.from?.pathname || "/"; // ✅ redirect target
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -32,7 +33,6 @@ const RegisterPage = () => {
     e.preventDefault();
     const { name, email, password, profilePhoto } = formData;
 
-    // Password validation
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     if (!passwordRegex.test(password)) {
@@ -55,7 +55,7 @@ const RegisterPage = () => {
 
       await register(email, password, name, photoURL);
       toast.success("Registration successful!");
-      navigate("/");
+      navigate(from, { replace: true }); // ✅ redirect to original page
     } catch (error) {
       toast.error(error.message);
     }
@@ -65,7 +65,7 @@ const RegisterPage = () => {
     try {
       await loginWithGoogle();
       toast.success("Registered with Google!");
-      navigate("/");
+      navigate(from, { replace: true }); // ✅ same for Google
     } catch (error) {
       toast.error(error.message);
     }
@@ -82,13 +82,11 @@ const RegisterPage = () => {
     <div className="min-h-screen bg-base-200 flex flex-col items-center justify-center p-4">
       <Toaster />
 
-      {/* Top Lottie Animation */}
       <div className="w-full max-w-md mb-8 flex justify-center">
         <Lottie options={defaultOptions} height={300} width={300} />
       </div>
 
-      {/* Register Form */}
-      <div className="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg">
+      <div className="w-full max-w-md text-black bg-white p-6 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold mb-6 text-center">Register</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">

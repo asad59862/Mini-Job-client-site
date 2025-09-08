@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* optional: CSS variables for a smoother transition */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+}
+
+.dark {
+  --bg: #0b1220;
+  /* dark background */
+  --text: #ffffff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 160ms linear, color 160ms linear;
+}

@@ -2,26 +2,24 @@ import React from "react";
 
 const MicroEarn = () => {
   return (
-    <div className="hero bg-base-200 min-h-screen px-4">
+    <div className="hero bg-base-200 dark:bg-base-100 min-h-screen px-4">
       <div className="hero-content flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16 justify-center">
-        {/* Image */}
-        <div className=" my-5 flex-col justify-center items-center">
-                  <img
-          src="https://miro.medium.com/1*Obg-jyR_bT65Itjnuclvxw.jpeg"
-          className="w-full h-50%  lg:max-w-md rounded-lg shadow-2xl"
-          alt="Micro Earn"
-        /> 
-        
-        <img
-          src="https://geekandblogger.com/wp-content/uploads/2023/02/Ways-to-make-money-online.jpg"
-          className="w-full mt-9 h-50%  lg:max-w-md rounded-lg shadow-2xl"
-          alt="Micro Earn"
-        />
+        {/* Images */}
+        <div className="my-5 flex flex-col justify-center items-center gap-6">
+          <img
+            src="https://miro.medium.com/1*Obg-jyR_bT65Itjnuclvxw.jpeg"
+            className="w-full lg:max-w-md rounded-lg shadow-2xl"
+            alt="Micro Earn"
+          />
+          <img
+            src="https://geekandblogger.com/wp-content/uploads/2023/02/Ways-to-make-money-online.jpg"
+            className="w-full lg:max-w-md rounded-lg shadow-2xl"
+            alt="Micro Earn"
+          />
         </div>
 
-
         {/* Text Content */}
-        <div className="flex-1 text-center lg:text-left">
+        <div className="flex-1 text-center lg:text-left text-base-content">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">Micro Earn</h1>
           <p className="text-base sm:text-lg mb-6 leading-relaxed">
             Micro-earning is an innovative way to make money online by
